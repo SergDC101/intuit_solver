@@ -16,6 +16,7 @@ class ExamPage(SeleniumBase):
         self.is_present(ExamLocators.CONFIRM_BUTTON).click()
 
     def get_count_questions(self) -> int:
+        time.sleep(1)
         return int(self.is_present(ExamLocators.COUNT_QUESTIONS).text.split("из")[-1].replace(")", ""))
 
     def get_question(self) -> str:

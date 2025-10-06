@@ -16,10 +16,10 @@ class DocxReporter:
         self.student_name = STUDENT_NAME
         self.group = GROUP_NAME
 
-        self.screenshot_dir = Path(ABSOLUT_PATH + f"\\{course_name}\скриншоты")
-        self.screenshot_dir.mkdir(parents=True, exist_ok=True)
+        self.screenshot_dir = Path(ABSOLUT_PATH + f"/{course_name}/скриншоты")
+        # self.screenshot_dir.mkdir(parents=True, exist_ok=True)
 
-        self.docs_dir = Path(ABSOLUT_PATH + f"\\{course_name}\\docx")
+        self.docs_dir = Path(ABSOLUT_PATH + f"/{course_name}/docx")
         self.docs_dir.mkdir(parents=True, exist_ok=True)
 
     def _natural_sort_key(self, filename):
@@ -78,5 +78,4 @@ class DocxReporter:
         # Сохраняем документ
         doc.save(str(self.docs_dir / "Экзамен.docx"))
         print(f"Документ успешно создан: {str(self.docs_dir / "Экзамен.docx")}")
-
 
